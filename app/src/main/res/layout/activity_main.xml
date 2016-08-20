@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn_jpong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JPong" />
+
+        <Button
+            android:id="@+id/btn_popstar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PopStar" />
+
+        <Button
+            android:id="@+id/btn_2048"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reserve" />
+
+        <Button
+            android:id="@+id/btn_bird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="flappy bird" />
+
+        <Button
+            android:id="@+id/btn_chess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reserve" />
+
+        <Button
+            android:id="@+id/btn_fish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fish" />
+
+        <Button
+            android:id="@+id/btn_five"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Five" />
+
+        <Button
+            android:id="@+id/btn_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Block" />
+
+        <Button
+            android:id="@+id/btn_lian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Link" />
+
+        <Button
+            android:id="@+id/btn_puzzle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Puzzle" />
+
+        <Button
+            android:id="@+id/btn_peng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reserve" />
+
+        <Button
+            android:id="@+id/btn_tui"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reserve" />
+
+        <Button
+            android:id="@+id/btn_tank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tank" />
+
+        <Button
+            android:id="@+id/btn_snake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Snake" />
+
+        <Button
+            android:id="@+id/btn_mouse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reserve" />
+
+        <Button
+            android:id="@+id/btn_tower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reserve" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyGameGroupTest</string>
+    <string name="action_settings">Settings</string>
+    <string name="mode_ready">Snake\nPress Up To Play</string>
+    <string name="mode_pause">Paused\nPress Up To Resume</string>
+    <string name="mode_lose">Game Over\nScore: %1$d \nPress Up To Play</string>
+</resources>

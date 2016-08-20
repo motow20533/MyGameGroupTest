@@ -1,0 +1,96 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.cgli.mygamegrouptest">
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.example.cgli.mygamegrouptest.MainActivity"
+            android:label="game group"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.cgli.mygamegrouptest.jpong.JPongActivity"
+            android:label="jpong"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light" >
+        </activity>
+
+        <activity
+            android:name="com.example.cgli.mygamegrouptest.link.LianActivity"
+            android:label="link"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light" >
+        </activity>
+        
+        <activity
+            android:name="com.example.cgli.mygamegrouptest.tank.TankActivity"
+            android:label="tank"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+        </activity>
+
+        <activity
+            android:name="com.example.cgli.mygamegrouptest.block.BlockActivity"
+            android:label="block"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light" >
+        </activity>
+        
+        <activity
+            android:name="com.example.cgli.mygamegrouptest.puzzle.PuzzleActivity"
+            android:label="puzzle"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light" >
+        </activity>
+        
+        <activity
+            android:name="com.example.cgli.mygamegrouptest.five.FiveActivity"
+            android:label="five"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+        </activity>
+        
+        <activity
+            android:name="com.example.cgli.mygamegrouptest.fish.FishActivity"
+            android:label="fish"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+        </activity>
+        
+        <activity
+            android:name="com.example.cgli.mygamegrouptest.bird.BirdActivity"
+            android:label="FlappyBird"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
+        
+        <activity
+            android:name="com.example.cgli.mygamegrouptest.popstar.PopStarActivity"
+            android:label="PopStar"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+        </activity>
+
+        <activity
+            android:name="com.example.cgli.mygamegrouptest.snake.Snake"
+            android:label="Snake"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+        </activity>
+        
+    </application>
+
+</manifest>
