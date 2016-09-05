@@ -1,7 +1,6 @@
 package com.example.cgli.mygamegrouptest.puzzle;
 
 import java.util.Random;
-import com.example.cgli.mygamegrouptest.LogUtil;
 import com.example.cgli.mygamegrouptest.PaintFactory;
 import com.example.cgli.mygamegrouptest.R;
 import android.content.Context;
@@ -12,11 +11,13 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 
 public class PuzzleGameView extends View {
+	private static final String TAG = PuzzleGameView.class.getSimpleName();
 	private Context mContext;
 	private Paint mPaint;
 	private int winWidth;
@@ -93,7 +94,7 @@ public class PuzzleGameView extends View {
 			Rect src = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
 			Rect dst = new Rect((int) (dWidth * i / 2) + 2 + (int) touchPiece.getXx() + (int) (downX % (dWidth / 2)), (int) (dHeight * j / 2) + 2 + (int) touchPiece.getYy() + (int) (downY % (dHeight / 2)), (int) (dWidth * (i + 1) / 2) + (int) touchPiece.getXx() + (int) (downX % (dWidth / 2)), (int) (dHeight * (j + 1) / 2) + (int) touchPiece.getYy() + (int) (downY % (dHeight / 2)));
 			canvas.drawBitmap(bitmap, src, dst, mPaint);
-			LogUtil.e(touchPiece.getXx() + ":" + touchPiece.getYy());
+			Log.e(TAG, touchPiece.getXx() + ":" + touchPiece.getYy());
 		}
 	}
 	private float downX = 1;
@@ -115,7 +116,7 @@ public class PuzzleGameView extends View {
 				// 将点击的块设置为null
 				int x = (int) (event.getX() / (dWidth / 2));
 				int y = (int) (event.getY() / (dHeight / 2));
-				// LogUtil.e(x + ":" + y);
+				// Log.e(TAG, x + ":" + y);
 				touchPiece = oldPieces[y][x];
 				pieceX = touchPiece.getX();
 				pieceY = touchPiece.getY();
@@ -123,7 +124,7 @@ public class PuzzleGameView extends View {
 				break;
 			case MotionEvent.ACTION_MOVE:
 				touchPiece.setXxYy(event.getX() - downX, event.getY() - downY);// 这个移动效果没有
-				// LogUtil.e((pieceX + event.getX() - downX) + "::" + (pieceY + event.getY() - downY));
+				// Log.e(TAG, (pieceX + event.getX() - downX) + "::" + (pieceY + event.getY() - downY));
 				break;
 			case MotionEvent.ACTION_UP:
 				oldPieces[pieceY][pieceX] = oldPieces[(int) (event.getY() / (dHeight / 2))][(int) (event.getX() / (dWidth / 2))];

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class FishManager {
 	private ArrayList<Fish> fishs = new ArrayList<Fish>();
-	// 单例模式
+
 	private FishManager() {
 	}
 	private static FishManager fishManager;
@@ -17,7 +17,7 @@ public class FishManager {
 	public ArrayList<Fish> getAllFishs() {
 		return fishs;
 	}
-	/** 添加一条新鱼 */
+	/** add a new fish */
 	public void addFish(float x, float y, int size) {
 		Fish fish = getAvailableFish();
 		if (fish == null) {

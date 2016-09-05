@@ -1,9 +1,6 @@
 package com.example.cgli.mygamegrouptest.five;
 
-import java.util.ArrayList;
 import com.example.cgli.mygamegrouptest.BaseView;
-import com.example.cgli.mygamegrouptest.LogUtil;
-import com.example.cgli.mygamegrouptest.MyPoint;
 import com.example.cgli.mygamegrouptest.PaintFactory;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -11,8 +8,11 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.view.MotionEvent;
+import android.util.Log;
 
 public class FiveGameView extends BaseView {
+
+	private static final String TAG = FiveGameView.class.getSimpleName();
 	public FiveGameView(Context context) {
 		super(context);
 	}
@@ -108,7 +108,7 @@ public class FiveGameView extends BaseView {
 	}
 	private boolean getPoints(int x, int y, int[][] array) {
 		if (array == null) {
-			LogUtil.e("数组为空");
+			Log.e(TAG, "array is null");
 		}
 		int aa = array[y][x];
 		// 左
@@ -118,7 +118,7 @@ public class FiveGameView extends BaseView {
 				countL++;
 			}
 		}
-		LogUtil.e("左:" + countL);
+		Log.e(TAG, "left:" + countL);
 		// 右
 		int countR = 0;
 		for (int i = x + 1; i < array.length; i++) {
@@ -126,7 +126,7 @@ public class FiveGameView extends BaseView {
 				countR++;
 			}
 		}
-		LogUtil.e("右:" + countR);
+		Log.e(TAG, "right:" + countR);
 		if (countL + countR >= 4) {
 			return true;
 		}
@@ -137,7 +137,7 @@ public class FiveGameView extends BaseView {
 				countU++;
 			}
 		}
-		LogUtil.e("上:" + countU);
+		Log.e(TAG, "up:" + countU);
 		// 下
 		int countD = 0;
 		for (int j = y + 1; j < array.length; j++) {
@@ -145,7 +145,7 @@ public class FiveGameView extends BaseView {
 				countD++;
 			}
 		}
-		LogUtil.e("下:" + countD);
+		Log.e(TAG, "down:" + countD);
 		if (countU + countD >= 4) {
 			return true;
 		}
@@ -156,7 +156,7 @@ public class FiveGameView extends BaseView {
 				countLU++;
 			}
 		}
-		LogUtil.e("左上:" + countLU);
+		Log.e(TAG, "left up:" + countLU);
 		// 右下
 		int countRD = 0;
 		for (int i = x + 1, j = y + 1; i < array.length && j < array.length; i++, j++) {
@@ -164,7 +164,7 @@ public class FiveGameView extends BaseView {
 				countRD++;
 			}
 		}
-		LogUtil.e("右下:" + countRD);
+		Log.e(TAG, "right down:" + countRD);
 		if (countLU + countRD >= 4) {
 			return true;
 		}
@@ -175,7 +175,7 @@ public class FiveGameView extends BaseView {
 				countRU++;
 			}
 		}
-		LogUtil.e("右上:" + countRU);
+		Log.e(TAG, "right up:" + countRU);
 		// 左下
 		int countLD = 0;
 		for (int i = x - 1, j = y + 1; i >= 0 && j < array.length; i--, j++) {
@@ -183,7 +183,7 @@ public class FiveGameView extends BaseView {
 				countLD++;
 			}
 		}
-		LogUtil.e("左下:" + countLD);
+		Log.e(TAG, "left down:" + countLD);
 		if (countRU + countLD >= 4) {
 			return true;
 		}

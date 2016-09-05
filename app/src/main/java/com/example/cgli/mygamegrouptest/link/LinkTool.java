@@ -1,9 +1,10 @@
 package com.example.cgli.mygamegrouptest.link;
 
 import java.util.ArrayList;
-import com.example.cgli.mygamegrouptest.LogUtil;
+import android.util.Log;
 
 public class LinkTool {
+	private static final String TAG = LinkTool.class.getSimpleName();
 	/**
 	 * 
 	 * 这里该如何返回连线的点的列表？？？？
@@ -12,7 +13,7 @@ public class LinkTool {
 	public static boolean link(int[][] array, Piece p1, Piece p2) {
 		// 判断是否为同一个方块
 		if (p1.equals(p2)) {
-			LogUtil.e("同一个方块");
+			Log.e(TAG, "同一个方块");
 			return false;
 		}
 		// 判断图片是否相同
@@ -178,10 +179,10 @@ public class LinkTool {
 			}
 		} else {
 			// 图片不相同
-			LogUtil.e("图片不相同");
+			Log.e(TAG, "图片不相同");
 			return false;
 		}
-		LogUtil.e("无法连接");
+		Log.e(TAG, "无法连接");
 		return false;
 	}
 	/** 判断两个点之间是否有障碍（X轴方向） */
@@ -191,7 +192,7 @@ public class LinkTool {
 				if (array[point1.getY()][x] != 0) {
 					return true;
 				} else if (array[point1.getY()][x] == 0 && x == (point2.getX() - 1)) {
-					LogUtil.e("X轴方向有障碍");
+					Log.e(TAG, "X轴方向有障碍");
 					return false;
 				}
 			}
@@ -200,7 +201,7 @@ public class LinkTool {
 				if (array[point1.getY()][x] != 0) {
 					return true;
 				} else if (array[point1.getY()][x] == 0 && x == (point1.getX() - 1)) {
-					LogUtil.e("X轴方向有障碍");
+					Log.e(TAG, "X轴方向有障碍");
 					return false;
 				}
 			}
@@ -214,7 +215,7 @@ public class LinkTool {
 				if (array[y][point1.getX()] != 0) {
 					return true;
 				} else if (array[y][point1.getX()] == 0 && y == point2.getY() - 1) {
-					LogUtil.e("Y轴方向有障碍");
+					Log.e(TAG, "Y轴方向有障碍");
 					return false;
 				}
 			}
@@ -223,7 +224,7 @@ public class LinkTool {
 				if (array[y][point1.getX()] != 0) {
 					return true;
 				} else if (array[y][point1.getX()] == 0 && y == point1.getY() - 1) {
-					LogUtil.e("Y轴方向有障碍");
+					Log.e(TAG, "Y轴方向有障碍");
 					return false;
 				}
 			}

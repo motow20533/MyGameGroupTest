@@ -35,7 +35,7 @@ public class TankActivity extends Activity {
 		// wheel.findViewById(R.id.btn_left).setOnClickListener(onClickListener);
 		// wheel.findViewById(R.id.btn_right).setOnClickListener(onClickListener);
 		findViewById(R.id.btn_shoot).setOnClickListener(onClickListener);
-		wheel.findViewById(R.id.btn_up).setOnTouchListener(onTouchListener);
+		wheel.findViewById(R.id.btn_turn).setOnTouchListener(onTouchListener);
 		wheel.findViewById(R.id.btn_down).setOnTouchListener(onTouchListener);
 		wheel.findViewById(R.id.btn_left).setOnTouchListener(onTouchListener);
 		wheel.findViewById(R.id.btn_right).setOnTouchListener(onTouchListener);
@@ -45,7 +45,7 @@ public class TankActivity extends Activity {
 		@Override
 		public boolean onTouch(View v, MotionEvent event) {
 			switch (v.getId()) {
-				case R.id.btn_up:
+				case R.id.btn_turn:
 					tankGameView.moveUp();
 					break;
 				case R.id.btn_down:
@@ -68,7 +68,7 @@ public class TankActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
-				case R.id.btn_up:
+				case R.id.btn_turn:
 					tankGameView.moveUp();
 					break;
 				case R.id.btn_down:

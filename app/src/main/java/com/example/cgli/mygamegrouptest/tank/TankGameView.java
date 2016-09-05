@@ -1,7 +1,6 @@
 package com.example.cgli.mygamegrouptest.tank;
 
 import java.util.ArrayList;
-import com.example.cgli.mygamegrouptest.LogUtil;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Paint.Style;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -20,6 +20,7 @@ import android.view.WindowManager;
  * @坦克类型
  */
 public class TankGameView extends SurfaceView implements SurfaceHolder.Callback {
+	private static final String TAG = TankGameView.class.getSimpleName();
 	private SurfaceHolder surfaceHolder;
 	private Canvas mCanvas;
 	private Paint mPaint;
@@ -210,7 +211,7 @@ public class TankGameView extends SurfaceView implements SurfaceHolder.Callback 
 			for (EnemyTank tank : enemyTanks) {
 				RectF rect = new RectF(tank.getX() - 20, tank.getY() - 20, tank.getX() + 20, tank.getY() + 20);
 				if (rect.contains(bullet.getX(), bullet.getY())) {
-					LogUtil.e("我的子弹和敌人的坦克发生了碰撞");
+					Log.e(TAG, "我的子弹和敌人的坦克发生了碰撞");
 					bullet.setBulletAlive(false);// 子弹消失
 					tank.setTankAlive(false);// 坦克消失
 					score += 50;// 每辆坦克50分
@@ -253,7 +254,7 @@ public class TankGameView extends SurfaceView implements SurfaceHolder.Callback 
 			pBomb = new Bomb(enemyTank.getX(), enemyTank.getY());
 			bombs.add(pBomb);
 		}
-		LogUtil.e("bombs:" + bombs.size());
+		Log.e(TAG, "bombs:" + bombs.size());
 		return pBomb;
 	}
 	@Override

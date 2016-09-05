@@ -45,7 +45,7 @@ public class LianActivity extends Activity {
 	}
 	private void testLink() {
 		int[][] array = new int[][] { { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 1, 2, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 2, 0, 0, 0, 0, 0, 0 }, { 0, 2, 2, 2, 2, 0, 1, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 } };
-		boolean linkable = LinkTool.link(array, new Piece(5, 1, R.drawable.ic_launcher), new Piece(6, 6, R.drawable.ic_launcher));
+		boolean linkable = LinkTool.link(array, new Piece(5, 1, R.drawable.gold_coin), new Piece(6, 6, R.drawable.gold_coin));
 		Log.e("zhangqi", "linkable:" + linkable);
 	}
 }

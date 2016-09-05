@@ -11,7 +11,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 import com.example.cgli.mygamegrouptest.AppConfig;
-import com.example.cgli.mygamegrouptest.LogUtil;
 import com.example.cgli.mygamegrouptest.PaintFactory;
 import com.example.cgli.mygamegrouptest.R;
 import android.app.Activity;
@@ -25,11 +24,13 @@ import android.graphics.Rect;
 import android.graphics.Paint.Style;
 import android.os.Environment;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
 public class LinkGameView extends View {
+	private static final String TAG = LinkGameView.class.getSimpleName();
 	private Context mContext;
 	private Paint mPaint;
 	private Paint bPaint;
@@ -166,10 +167,10 @@ public class LinkGameView extends View {
 				// 可以消除
 				newMap[piece1.getY()][piece1.getX()] = 0;
 				newMap[piece2.getY()][piece2.getX()] = 0;
-				LogUtil.e("可以消除");
+				Log.e(TAG, "can be deleted");
 			} else {
 				// 不可以消除
-				LogUtil.e("不可以消除");
+				Log.e(TAG, "can not be deleted");
 			}
 			piece1.init();
 			piece2.init();
